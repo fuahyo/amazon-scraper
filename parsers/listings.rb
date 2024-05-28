@@ -1,5 +1,6 @@
 nokogiri = Nokogiri.HTML(content)
 products = nokogiri.css('.s-latency-cf-section .s-result-item .sg-col-inner')
+puts nokogiri
 # products = nokogiri.css('#mainResults li', '#resultsCol li')
 products.each do |product|
   a_element = product.at_css('[data-cy="title-recipe"] a.a-link-normal.a-text-normal')
@@ -20,21 +21,21 @@ end
 
 # total_page_summary = nokogiri.css("li.comet-pagination-item.comet-pagination-item-60 > a").text
 # total_page = total_page_summary.scan(/\d+/).first.to_i
-2.upto(9) do |i|
-    if i < 11
-        pageUrl = "https://www.amazon.com/s?k=oled+tv%27s&i=electronics&rh=n%3A1266092011&page=#{i}&qid=1716828365&ref=sr_pg_#{i}"
-        # pageUrl = "https://www.amazon.com/s/ref=sr_pg_3?rh=n%3A172282%2Cn%3A%21493964%2Cn%3A1266092011%2Cn%3A172659%2Cn%3A6459737011&page=#{i}&ie=UTF8"
+# 2.upto(9) do |i|
+#     if i < 11
+#         pageUrl = "https://www.amazon.com/s?k=oled+tv%27s&i=electronics&rh=n%3A1266092011&page=#{i}&qid=1716828365&ref=sr_pg_#{i}"
+#         # pageUrl = "https://www.amazon.com/s/ref=sr_pg_3?rh=n%3A172282%2Cn%3A%21493964%2Cn%3A1266092011%2Cn%3A172659%2Cn%3A6459737011&page=#{i}&ie=UTF8"
         
         
-        pages << {
-            page_type: "listings",
-            url:pageUrl,        
-            vars: {
-                category: page['vars']['category']
-            },
-        }
-    end
-end
+#         pages << {
+#             page_type: "listings",
+#             url:pageUrl,        
+#             vars: {
+#                 category: page['vars']['category']
+#             },
+#         }
+#     end
+# end
 # pagination_links = nokogiri.css('#pagn a')
 # pagination_links.each do |link|
 #   page_num = link.text.strip
