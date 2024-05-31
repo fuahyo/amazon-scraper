@@ -5,7 +5,7 @@ products = nokogiri.css('.s-result-item.s-asin')
 
 products.each do |product|
   a_element = product.at_css('[data-cy="title-recipe"] a.a-link-normal.a-text-normal')
-  puts 1
+  # puts 1
   if a_element
     url = a_element['href'].gsub(/&qid=[0-9]*/,'')
     full_url = URI.join('https://www.amazon.com', url).to_s
